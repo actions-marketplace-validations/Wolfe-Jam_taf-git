@@ -92,7 +92,7 @@ jobs:
       - name: Download the test output
         id: download
         continue-on-error: true
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: ${{ inputs.artifact-name }}
           path: ${{ runner.temp }}/taf-receipt-input
@@ -129,7 +129,7 @@ jobs:
       - name: Write the receipt
         id: taf
         if: steps.download.outcome == 'success' || steps.none.outputs.placeholder == 'true'
-        uses: Wolfe-Jam/taf-git@v3.0.1
+        uses: Wolfe-Jam/taf-git@v3.0.2
         with:
           test-output-file: ${{ runner.temp }}/taf-receipt-input/${{ inputs.test-output-file }}
           auto-commit: 'true'
