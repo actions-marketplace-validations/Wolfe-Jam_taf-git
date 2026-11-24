@@ -87,7 +87,7 @@ jobs:
       receipt-pushed: ${{ steps.taf.outputs.receipt-pushed }}
 
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
 
       - name: Download the test output
         id: download
